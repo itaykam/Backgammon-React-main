@@ -8,7 +8,7 @@ import { GameStateProvider } from "./state/GameContext";
 import axios from "axios";
 
 
-axios.defaults.baseURL = "http://localhost:3003/api/game";
+//axios.defaults.baseURL = "http://localhost:3003/api/game";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <GameStateProvider>
     <div>

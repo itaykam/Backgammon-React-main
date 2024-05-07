@@ -40,7 +40,7 @@ export const useHttpClient = (): HttpClientHook => {
 
   axios.interceptors.response.use(
     async (response): Promise<any> =>{
-      if(response.status === 401 && response.data.message === "Unauthorized" && token){ {
+      if(response.status === 401 && response.data.message === "TokenExpiredError" && token){ {
         //refreshToken
         const tokens = await refreshTokens(token);
         console.log(tokens);
