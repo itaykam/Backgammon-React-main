@@ -141,13 +141,12 @@ export async function requestUserSelect(
         timeout: AXIOS_TIMEOUT_MS,
       }
     );
-    if (response.status !== 200) throw new Error("failed to send select event");
-    if (response) return true;
-  } catch (err) {
-    console.error(err);
-    if (axios.isCancel(err)) {
-      console.error("SELECT REQUEST TIMED OUT: ", err);
+    if (!response || response.status !== 200) {
+      throw new Error("Failed to send select event");
     }
+    return true;
+  } catch (err) {
+    console.error("Error in Axios request:", err);
     return false;
   }
 }
