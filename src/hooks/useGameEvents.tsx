@@ -29,6 +29,7 @@ interface GameObjectModel {
 }
 
 export default function useGameEvents(username: string, opponent: string) {
+  debugger;
   const { game, updateGame, thisTurn, updateTurn, thisMove, updateMove } =
     useGameState();
   const [isWaitingForOpponent, setIsWaitingForOpponent] = useState(true);
